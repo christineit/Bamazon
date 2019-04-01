@@ -22,3 +22,5 @@ connection.connect(function(err) {
   showProduct();
 });
 //connection.end();
+
+function showProduct() {}
