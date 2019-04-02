@@ -26,16 +26,17 @@ connection.connect(function(err) {
 function showProducts() {
   connection.query("SELECT * FROM products", function(err, res) {
     if (err) throw err;
+    // console.log(res);
     var showTable = new Table({
       head: ["Item ID", "Product Name", "Department", "Price", "In Stock"],
-      colWidths: [10, 15, 15, 20, 10]
+      colWidths: [10, 15, 20, 20, 10]
     });
     for (var i = 0; i < res.length; i++) {
       showTable.push([
         res[i].item_id,
         res[i].product_name,
         res[i].department_name,
-        res[i].price,
+        "$" + res[i].price.toFixed(2),
         res[i].stock_quantity
       ]);
     }
