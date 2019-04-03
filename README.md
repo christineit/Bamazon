@@ -12,7 +12,7 @@ This project is useful for understanding and practicing how Node.js and MySQL wo
 
 ## How users can get started with the project
 
-Users can get started with this project by running installing the required packages for the app. After doing so, run the terminal in your preferred text editor (Visual Studio Code preferred). Once you run the file in your terminal you will be able to see how the code works.
+Users can get started with this project by installing the required packages for the app. After doing so, run the terminal in your preferred text editor (Visual Studio Code preferred). Once you run the file in your terminal you will be able to see how the code works.
 
 ## Where users can get help with your project
 
