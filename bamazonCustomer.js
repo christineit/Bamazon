@@ -67,22 +67,26 @@ function shoppingPrompt() {
       var productID = ans.productId;
       var productNeeded = ans.quantity;
 
-      placeOrder();
-        }
-      );
-    
-
-// Once the customer has placed the order, your application should check if your store has enough of the product to meet the customer's request.
-// If not, the app should log a phrase like Insufficient quantity!, and then prevent the order from going through.
-// However, if your store does have enough of the product, you should fulfill the customer's order.
-// This means updating the SQL database to reflect the remaining quantity.
-// Once the update goes through, show the customer the total cost of their purchase.
-function placeOrder(){
-
+      placeOrder(productID, productNeeded);
+    });
 }
-// //if else statement:
-//     // if qty id(user) <= available(DB) quantity {
-//       update database
-//       console.log(Thank you for shopping)
-//       showProducts()
-//   }else {console.log(Insufficient qty, please buy something else)
+
+function placeOrder(productID, productNeeded) {
+  connection.query(
+    "SELECT * FROM products WHERE item_id = " + productID,
+    function(err, res) {
+      if (err) {
+        console.log(err);
+      }
+      if (productNeeded <= res[0].stock_quantity) {
+        var totalCost = res[0].price * productNeeded;
+        console.log("IN STOCK! We are able to complete your purchase!");
+      } else {
+        console.log(
+          "Unable to complete purchase: not enough product in stock."
+        );
+      }
+      showProducts();
+    }
+  );
+}
