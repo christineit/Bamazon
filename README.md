@@ -2,6 +2,9 @@
 
 homework-10: Node.js &amp; MySQL
 
+##DEMO:
+![alt-text]()
+
 ## What the project does
 
 This project illustrates a simple Amazon like marketplace where users can purchase items stored inside a MySQL database.
