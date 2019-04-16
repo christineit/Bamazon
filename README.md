@@ -3,7 +3,7 @@
 homework-10: Node.js &amp; MySQL
 
 ##DEMO:
-![alt-text]()
+![alt-text](https://github.com/christineit/Bamazon/blob/master/assets/demo.gif)
 
 ## What the project does
 
